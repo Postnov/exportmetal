@@ -1,0 +1,22 @@
+@import 'base/vars.scss';
+@import 'base/grid.scss';
+
+body {font-size: 16px;font-family: Arial;box-sizing: border-box;background-color: #fff;
+  &.no-scroll {overflow: hidden;}
+}
+
+* {box-sizing: inherit;}
+p {line-height: 1.5;}
+img {max-width: 100%;}
+
+/* helpers */
+
+.container {width: 100%; max-width: 1170px;padding-left: 25px;padding-right: 25px;margin-left: auto;margin-right: auto;}
+
+.demo-responsive {width: 33%;
+  @media (max-width: $tablet) {width: 50%;}
+  @media (max-width: $mobile) {width: 50%;}
+}
+
+
+
