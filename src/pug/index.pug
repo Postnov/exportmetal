@@ -8,30 +8,66 @@ html(lang="ru")
     //top-section
     section.section.top-section
       .container
-        h2.section-title
+        .top-section-heading
+          h1.title Вывоз металлолома в Краснодаре
+          h2.subtitle по выгодными условиям
+
+        .top-section-info
+          p.top-section-time Работаем с 9:00 до 21:00
+          a.top-section-phone(href="tel:89284440372") +7 928 444-03-72
 
     //info-section
     section.section.info-section
       .container
-        h2.section-title
+        h2.section-title Подробнее о вывозе
+        .info-grid
+          .info-content
+            .info-list
+              each item in info
+                .info-item
+                  p.info-item-text=item.info
+            .info-text
+              p Звоните!
+              a(href="tel:+7 928 444-03-72") +7 928 444-03-72
+          .info-img
+            img(src="", alt="")
 
     //step-section
     section.section.step-section
       .container
-        h2.section-title
+        h2.section-title Как мы работаем
+        .steps
+          each item, index in steps
+            .step
+              span.step-number=index+1
+              p.step-text=item
+
+        a.btn.btn-whatsapp(href="#") Перейти в whatsapp
 
     //faq-section
     section.section.faq-section
       .container
-        h2.section-title
+        h2.section-title Частные вопросы
+        .faq-list
+          each item in faq
+            .faq-item
+              p.faq-title=item.question
+              p.faq-text=item.answer
 
     //price-section
     section.section.price-section
       .container
-        h2.section-title
+        .price-section-content
+          h2.section-title Не знаете цену металла?
+          p.section-subtitle Отправьте фото или видео в whatsapp и мы сообщим приблизительную стоимость
+          a.btn.btn-whatsapp(href="#") Отправить на оценку
+        .price-section-image
+          img(src="", alt="")
 
     //footer
     footer.footer
       .container
+        p.footer-text Вывоз мусора в Краснодаре
+        a.footer-phone(href="#")
 
     include partials/scripts.pug
