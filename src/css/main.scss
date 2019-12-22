@@ -11,24 +11,35 @@ img {max-width: 100%; max-height: 100%;}
 
 /* helpers */
 .section {padding: 100px 0;
+  @media (max-width: $tablet) {padding: 60px 0;}
   &-title {font-size: 2.5rem; text-align: center;}
 }
 
 .btn { background-color: $primary; color: #fff; font-weight: bold; padding: 18px 35px;
   display: inline-block; text-decoration: none; border-radius: 3px;
   box-shadow: 0px 5px 10px rgba(0, 230, 118, 0.3); transition: .3s all;
+  @media (max-width: $tablet) {padding: 14px 20px;}
   &:hover {transform: translateY(-1px);}
   &-whatsapp { vertical-align: middle;
-    &::before {content: ''; width: 28px; height: 28px; display: inline-block; background-image: url('../images/whatsapp-icon.svg'); background-size: cover; display: inline-block;
-    vertical-align: middle; margin-right: 10px;}
+    &::before {content: ''; width: 28px; height: 28px; display: inline-block; background-image: url('../images/whatsapp-icon.svg'); background-size: cover; display: inline-block; vertical-align: middle; margin-right: 10px;
+      @media (max-width: $tablet) {width: 18px; height: 18px;}
+    }
   }
 }
 
-.container {width: 100%; max-width: 1170px;padding-left: 25px;padding-right: 25px;margin-left: auto;margin-right: auto;}
+.container {width: 100%; max-width: 1170px;padding-left: 25px;padding-right: 25px;margin-left: auto;margin-right: auto;
+  @media (max-width: $tablet) {padding-left: 15px; padding-right: 15px;}
+}
+
+br.tablet {display: none;
+  @media (max-width: $tablet) {display: block;}
+}
 
 /* top-section */
-.top-section { color: #fff; padding: 150px 0; background-image: url('../images/top-section-bg.png'); background-size: cover; text-align: center; background-color: #000;
+.top-section { color: #fff; padding: 150px 0; background-image: url('../images/top-section-bg.png'); background-size: cover; background-color: #000;
+  @media (max-width: $tablet) {padding: 60px 0;}
   &-heading {font-size: 2rem; line-height: 1.2;
+    @media (max-width: $tablet) {font-size: 1.3rem;}
     .title {margin: 0;}
     .subtitle {color: $primary; margin: 0; }
   }
@@ -45,7 +56,9 @@ img {max-width: 100%; max-height: 100%;}
   .info {
     &-grid {display: flex; align-items: flex-start; justify-content: space-between;
        flex-wrap: wrap;}
-    &-content {width: 55%;}
+    &-content {width: 55%;
+      @media (max-width: $tablet) {width: 100%;}
+    }
     &-list {list-style: none; padding: 0; margin: 0; display: flex; align-items: flex-start;
     justify-content: flex-start; flex-wrap: wrap;}
     &-item {width: max-content; display: flex; align-content: flex-start; margin-bottom: 20px; margin-right: 30px;
@@ -53,7 +66,9 @@ img {max-width: 100%; max-height: 100%;}
       margin-right: 10px; width: 30px; flex-basis: 30px;}
       &-text {display: inline-block; flex: 1 0; margin: 0;}
     }
-    &-img {width: 45%;}
+    &-img {width: 45%;
+      @media (max-width: $tablet) {margin-top: 50px; width: 100%;}
+    }
     &-text {font-size: 1.5rem; margin-top: 50px;
       p {margin: 0;}
       a {color: $primary; display: inline-block; margin-top: 5px; font-weight: bold;
@@ -64,10 +79,17 @@ img {max-width: 100%; max-height: 100%;}
 
 /* step-section */
 .step-section { background-color: #F8F8F8;
-  .steps { margin-top: 60px; display: flex; justify-content: space-between; align-items: center;}
-  .step { display: flex; align-items: flex-start;
-    &-number {font-size: 3.8rem; font-weight: bold; line-height: 1;}
-    &-text {margin: 5px 0 0 10px; max-width: 180px;}
+  .steps { margin-top: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+    @media (max-width: $tablet) {justify-content: center;}
+  }
+  .step { display: flex; align-items: flex-start; flex-wrap: wrap;
+    @media (max-width: $tablet) {padding: 20px; width: 300px; text-align: center;}
+    &-number {font-size: 3.8rem; font-weight: bold; line-height: 1;
+      @media (max-width: $tablet) {width: 100%;}
+    }
+    &-text {margin: 5px 0 0 10px; max-width: 180px;
+      @media (max-width: $tablet) {width: 100%; margin: 0 auto;}
+    }
   }
   .btn {margin: 60px auto 0; display: block; width: max-content;}
 }
@@ -77,14 +99,17 @@ img {max-width: 100%; max-height: 100%;}
 .faq {
   &-list {margin-top: 60px; display: flex; align-items: flex-start; justify-content: space-between;
   flex-wrap: wrap;}
-  &-masonry {padding: 0 10px; width: 50%; margin-bottom: 20px; }
-  &-item { background-color: #fff; color: #333; width: 100%; border-radius: 5px;
-    padding: 25px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  &-masonry {padding: 0 10px; width: 50%; margin-bottom: 20px;
+    @media (max-width: $tablet) {width: 100%;}
   }
+  &-item { background-color: #fff; color: #333; width: 100%; border-radius: 5px;
+    padding: 25px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);}
   &-title {font-weight: bold; font-size: 1.2rem; margin: 0;}
   &-text {margin: 20px 0 0;}
   &-offer {font-weight: bold; font-size: 2rem; text-align: center; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15); margin: 50px 0 0;
-    a {color: #fff; text-decoration: none;}
+    a {color: #fff; text-decoration: none;
+      @media (max-width: $tablet) {display: block;}
+    }
   }
 }
 
@@ -96,9 +121,11 @@ img {max-width: 100%; max-height: 100%;}
   .btn {margin: 30px 0 0;}
 }
 .price {
-  &-content {width: 60%;}
+  &-content {width: 60%;
+    @media (max-width: $tablet) {width: 100%;}
+  }
   &-image {flex: 1 0; max-height: 500px; overflow: hidden;
-    img {max-height: 100%;}
+    @media (max-width: $tablet) {display: none;}
   }
 }
 
